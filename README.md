@@ -1,131 +1,137 @@
-# 🛍️ GoCommerceX
+# 🛍️ GoCommerceX — Full-Stack E-Commerce Platform
 
-**Full Stack E-commerce Application built with Next.js, Golang (Gin), and MongoDB**  
-A complete shopping platform with user authentication, admin panel, product CRUD, and image uploads.  
-
-🚀 **Tech Stack:**  
-`Next.js` • `React` • `Golang (Gin)` • `MongoDB` • `JWT Auth` • `Tailwind CSS`
+GoCommerceX is a modern full-stack e-commerce application built using **Next.js, Golang (Gin) and MongoDB**.  
+It includes **user authentication, admin dashboard, product CRUD, and image uploads**.
 
 ---
 
-## 📸 Preview
+## 🚀 Tech Stack
 
-![GoCommerceX Banner](./banner.png)
-
-*(Add your banner image above — create one in Canva with the title “GoCommerceX — Full Stack E-Commerce App”)*
+| Layer | Technology |
+|------|-----------|
+Frontend | Next.js (App Router), React, Tailwind CSS  
+Backend | Golang (Gin Framework)  
+Database | MongoDB (Atlas / Local)  
+Auth | JWT (JSON Web Token)  
+Uploads | Local file storage `uploads/`  
 
 ---
 
 ## ✨ Features
 
 ### 🧑‍💻 User Features
-- 🔐 **Signup / Login** with JWT authentication  
-- 👤 **Session management** (Login/Logout)  
-- 🛒 **View products** with name, description, image, and price  
-- 💬 **Responsive design** — works on desktop & mobile  
+- User Signup / Login (JWT based)
+- Session-based login/logout
+- View products with images, description & price
+- Fully responsive UI
 
-### 🧑‍💼 Admin Features
-- 🧾 **Admin Dashboard** with authentication  
-- 🧱 **Add / Edit / Delete Products (CRUD)**  
-- 🖼️ **Image Uploads** (via `/upload` API endpoint)  
-- 🚫 **Protected Routes** using middleware (`AuthMiddleware` + `AdminMiddleware`)  
-
----
-
-## ⚙️ Tech Architecture
-
-Frontend: Next.js (React + Tailwind CSS)
-Backend: Golang (Gin Framework)
-Database: MongoDB (Atlas)
-Auth: JWT (JSON Web Tokens)
-Uploads: Local file storage (/uploads)
-
-yaml
-Copy code
+### 🛠️ Admin Features
+- Admin login panel
+- Add / Edit / Delete products (CRUD)
+- Upload product images
+- Protected Admin API (JWT + Admin Middleware)
 
 ---
 
-## 🧭 Folder Structure
+## 📸 Screenshots
 
-gocommerce/
+> Add images after running your app
+
+| Home | Product Page | Admin Panel |
+|------|-------------|-------------|
+| ![home](./screens/home.png) | ![product](./screens/product.png) | ![admin](./screens/admin.png) |
+
+📂 Create folder `/screens` and add screenshots later.
+
+---
+
+## 🧠 Folder Structure
+
+```
+GoCommerceX/
 │
 ├── backend/
-│ ├── config/ # MongoDB connection setup
-│ ├── controllers/ # All API logic (user, product, upload)
-│ ├── middleware/ # JWT, Auth & Admin Middleware
-│ ├── models/ # Database Schemas
-│ ├── routes/ # API Endpoints
-│ └── main.go # Entry point
+│   ├── config/        # DB connection
+│   ├── controllers/   # API logic (user, product, image)
+│   ├── middleware/    # Auth + Admin middlewares
+│   ├── models/        # DB Schemas
+│   ├── routes/        # Route definitions
+│   └── main.go        # App entry
 │
 └── frontend/
-├── src/
-│ ├── app/ # Next.js App Router
-│ ├── components/ # Navbar, ProductCard, etc.
-│ └── pages/ # Home, Login, Signup, Product Detail, Admin Dashboard
-├── public/
-└── package.json
-
-pgsql
-Copy code
+    └── src/app/       # Next.js app router pages
+```
 
 ---
 
-## 🧩 API Endpoints
+## 🧪 API Endpoints
 
-### 🔑 Authentication
+### 🔐 Auth
 | Method | Endpoint | Description |
-|--------|-----------|-------------|
-| POST | `/signup` | Register new user |
-| POST | `/login` | User login (returns JWT) |
+|---|---|---|
+POST | `/signup` | Register new user  
+POST | `/login` | Login and get JWT  
 
-### 🛍️ Products
-| Method | Endpoint | Description |
-|--------|-----------|-------------|
-| GET | `/products` | Get all products |
-| GET | `/products/:id` | Get single product |
-| POST | `/admin/products` | Add new product (Admin only) |
-| PUT | `/admin/products/:id` | Update product (Admin only) |
-| DELETE | `/admin/products/:id` | Delete product (Admin only) |
+### 🛒 Products
+| Method | Endpoint | Access |
+|---|---|---|
+GET | `/products` | Public  
+GET | `/products/:id` | Public  
+POST | `/admin/products` | Admin only  
+PUT | `/admin/products/:id` | Admin only  
+DELETE | `/admin/products/:id` | Admin only  
 
-### 🖼️ Uploads
+### 🖼️ Upload
 | Method | Endpoint | Description |
-|--------|-----------|-------------|
-| POST | `/upload` | Upload product image |
+|---|---|---|
+POST | `/upload` | Upload image file  
 
 ---
 
-## 🧠 How to Run Locally
+## 🛠️ Setup Instructions
 
-### 1️⃣ Backend Setup
+### ✅ Backend (Go)
 ```bash
 cd backend
 go mod tidy
 go run main.go
-Server runs on 👉 http://localhost:8080
+```
+Runs on 👉 **http://localhost:8080**
 
-2️⃣ Frontend Setup
-bash
-Copy code
+### ✅ Frontend (Next.js)
+```bash
 cd frontend
 npm install
 npm run dev
-Frontend runs on 👉 http://localhost:3000
+```
+Runs on 👉 **http://localhost:3000**
 
-🧑‍💻 Developer Info
-👨‍💻 Developer: Pankaj Upadhyay
-📧 Email: upadhayay.pankaj1986@gmail.com
-💼 GitHub: github.com/pu1986
+---
 
-🏗️ Deployment (Optional)
-Frontend: Deploy on Vercel
+## 🌐 Deployment Recommendations
 
-Backend: Deploy on Render or Railway
+| Service | Purpose |
+|--------|--------|
+Vercel | Frontend  
+Render / Railway | Go backend  
+MongoDB Atlas | Cloud database  
 
-Database: Use MongoDB Atlas
+---
 
-📜 License
-This project is licensed under the MIT License.
+## 👨‍💻 Developer
 
-⭐ If you like this project, give it a star on GitHub!
-Your support motivates open-source developers 🙌
+**Pankaj Upadhyay**  
+📧 Email: `upadhayay.pankaj1986@gmail.com`  
+💼 GitHub: https://github.com/pu1986  
 
+---
+
+## ⭐ Support
+
+Agar ye project pasand aaye toh **GitHub par Star ⭐ zarur dena!**  
+Open-source developer ko support milta hai ❤️
+
+---
+
+### 📜 License
+MIT License — free to use for learning and commercial projects.
