@@ -1,118 +1,131 @@
-🛍️ GoCommerceX
+# 🛍️ GoCommerceX
 
-Full Stack E-Commerce Application built with Next.js, Golang (Gin), and MongoDB
+**Full Stack E-commerce Application built with Next.js, Golang (Gin), and MongoDB**  
+A complete shopping platform with user authentication, admin panel, product CRUD, and image uploads.  
 
-🚀 Modern shopping platform with secure authentication, admin dashboard, image uploads, and full product CRUD management.
+🚀 **Tech Stack:**  
+`Next.js` • `React` • `Golang (Gin)` • `MongoDB` • `JWT Auth` • `Tailwind CSS`
 
-🧠 Tech Stack
-Layer	Technology
-Frontend	Next.js
- (React + App Router)
-Backend	Go (Gin Framework)
+---
 
-Database	MongoDB Atlas
+## 📸 Preview
 
-Auth	JWT (JSON Web Tokens)
-Styling	Tailwind CSS
-Image Uploads	Local /uploads folder or S3 (optional)
-✨ Features
-👤 User Features
+![GoCommerceX Banner](./banner.png)
 
-🔐 Signup / Login with JWT authentication
+*(Add your banner image above — create one in Canva with the title “GoCommerceX — Full Stack E-Commerce App”)*
 
-🧾 Session Management (login persistence & logout)
+---
 
-🛍️ Browse Products with name, image, price & description
+## ✨ Features
 
-📱 Responsive UI for desktop and mobile
+### 🧑‍💻 User Features
+- 🔐 **Signup / Login** with JWT authentication  
+- 👤 **Session management** (Login/Logout)  
+- 🛒 **View products** with name, description, image, and price  
+- 💬 **Responsive design** — works on desktop & mobile  
 
-🧑‍💼 Admin Features
+### 🧑‍💼 Admin Features
+- 🧾 **Admin Dashboard** with authentication  
+- 🧱 **Add / Edit / Delete Products (CRUD)**  
+- 🖼️ **Image Uploads** (via `/upload` API endpoint)  
+- 🚫 **Protected Routes** using middleware (`AuthMiddleware` + `AdminMiddleware`)  
 
-🧱 Admin Dashboard with CRUD operations
+---
 
-🖼️ Image Uploads via /upload API
+## ⚙️ Tech Architecture
 
-🚫 Protected Routes (AuthMiddleware + AdminMiddleware)
+Frontend: Next.js (React + Tailwind CSS)
+Backend: Golang (Gin Framework)
+Database: MongoDB (Atlas)
+Auth: JWT (JSON Web Tokens)
+Uploads: Local file storage (/uploads)
 
-✅ Approve / Manage Products in real-time
+yaml
+Copy code
 
-⚙️ Project Structure
-gocommercex/
+---
+
+## 🧭 Folder Structure
+
+gocommerce/
 │
 ├── backend/
-│   ├── config/          # MongoDB connection setup
-│   ├── controllers/     # Business logic (user, product, upload)
-│   ├── middleware/      # JWT auth & admin protection
-│   ├── models/          # MongoDB schemas
-│   ├── routes/          # API routes
-│   └── main.go          # Entry point
+│ ├── config/ # MongoDB connection setup
+│ ├── controllers/ # All API logic (user, product, upload)
+│ ├── middleware/ # JWT, Auth & Admin Middleware
+│ ├── models/ # Database Schemas
+│ ├── routes/ # API Endpoints
+│ └── main.go # Entry point
 │
 └── frontend/
-    ├── src/app/         # Next.js App Router pages
-    ├── src/components/  # Navbar, ProductCard, etc.
-    ├── public/          # Static assets
-    └── package.json
+├── src/
+│ ├── app/ # Next.js App Router
+│ ├── components/ # Navbar, ProductCard, etc.
+│ └── pages/ # Home, Login, Signup, Product Detail, Admin Dashboard
+├── public/
+└── package.json
 
-🧩 API Endpoints
-🔑 Authentication
-Method	Endpoint	Description
-POST	/signup	Register a new user
-POST	/login	Login & get JWT token
-🛍️ Products
-Method	Endpoint	Description
-GET	/products	Fetch all products
-GET	/products/:id	Get product by ID
-POST	/admin/products	Create new product (Admin only)
-PUT	/admin/products/:id	Update product (Admin only)
-DELETE	/admin/products/:id	Delete product (Admin only)
-🖼️ Image Upload
-Method	Endpoint	Description
-POST	/upload	Upload product image
-🧭 Local Setup
-🧩 Backend
+pgsql
+Copy code
+
+---
+
+## 🧩 API Endpoints
+
+### 🔑 Authentication
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| POST | `/signup` | Register new user |
+| POST | `/login` | User login (returns JWT) |
+
+### 🛍️ Products
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| GET | `/products` | Get all products |
+| GET | `/products/:id` | Get single product |
+| POST | `/admin/products` | Add new product (Admin only) |
+| PUT | `/admin/products/:id` | Update product (Admin only) |
+| DELETE | `/admin/products/:id` | Delete product (Admin only) |
+
+### 🖼️ Uploads
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| POST | `/upload` | Upload product image |
+
+---
+
+## 🧠 How to Run Locally
+
+### 1️⃣ Backend Setup
+```bash
 cd backend
 go mod tidy
 go run main.go
-# Server running at http://localhost:8080
+Server runs on 👉 http://localhost:8080
 
-🖥️ Frontend
+2️⃣ Frontend Setup
+bash
+Copy code
 cd frontend
 npm install
 npm run dev
-# Frontend running at http://localhost:3000
+Frontend runs on 👉 http://localhost:3000
 
-🌍 Deployment
-Service	Purpose	Link
-Frontend	Deploy with Vercel
-	
-Backend	Use Render
- or Railway
-	
-Database	MongoDB Atlas Cloud
-	
-🧑‍💻 Developer
-
-👨‍💻 Pankaj Upadhyay
+🧑‍💻 Developer Info
+👨‍💻 Developer: Pankaj Upadhyay
 📧 Email: upadhayay.pankaj1986@gmail.com
-
 💼 GitHub: github.com/pu1986
 
-🚀 Portfolio (Coming soon): https://pankajdev.me (optional placeholder)
+🏗️ Deployment (Optional)
+Frontend: Deploy on Vercel
 
-🪄 Future Enhancements
+Backend: Deploy on Render or Railway
 
-🔎 Product search & filtering
-
-🛒 Shopping cart & checkout flow
-
-💳 Razorpay / Stripe payment integration
-
-📦 Admin order management dashboard
+Database: Use MongoDB Atlas
 
 📜 License
-
 This project is licensed under the MIT License.
-Feel free to fork, modify, and build upon this project.
 
-⭐ Support Open Source
-If you liked this project, please give it a ⭐ on GitHub — it helps me grow as a developer 🙌
+⭐ If you like this project, give it a star on GitHub!
+Your support motivates open-source developers 🙌
+
