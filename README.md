@@ -37,9 +37,7 @@ Uploads | Local file storage `uploads/`
 
 > Add images after running your app
 
-| Home | Product Page | Admin Panel |
-|------|-------------|-------------|
-| ![home](./screens/home.png) | ![product](./screens/product.png) | ![admin](./screens/admin.png) |
+
 
 📂 Create folder `/screens` and add screenshots later.
 
