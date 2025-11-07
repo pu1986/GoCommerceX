@@ -31,17 +31,6 @@ Uploads | Local file storage `uploads/`
 - Upload product images
 - Protected Admin API (JWT + Admin Middleware)
 
----
-
-## 📸 Screenshots
-
-> Add images after running your app
-
-
-
-📂 Create folder `/screens` and add screenshots later.
-
----
 
 ## 🧠 Folder Structure
 
